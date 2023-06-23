@@ -1,0 +1,44 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32505.173
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Forge", "Forge\Forge.vcxproj", "{5BB4D4FF-6A01-466D-A2AB-78EA80ABEE1C}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Sandbox", "Sandbox\Sandbox.vcxproj", "{709528F8-5B3E-4857-A2B6-7CA4307AFEFE}"
+	ProjectSection(ProjectDependencies) = postProject
+		{5BB4D4FF-6A01-466D-A2AB-78EA80ABEE1C} = {5BB4D4FF-6A01-466D-A2AB-78EA80ABEE1C}
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5BB4D4FF-6A01-466D-A2AB-78EA80ABEE1C}.Debug|x64.ActiveCfg = Debug|x64
+		{5BB4D4FF-6A01-466D-A2AB-78EA80ABEE1C}.Debug|x64.Build.0 = Debug|x64
+		{5BB4D4FF-6A01-466D-A2AB-78EA80ABEE1C}.Debug|x86.ActiveCfg = Debug|x64
+		{5BB4D4FF-6A01-466D-A2AB-78EA80ABEE1C}.Debug|x86.Build.0 = Debug|x64
+		{5BB4D4FF-6A01-466D-A2AB-78EA80ABEE1C}.Release|x64.ActiveCfg = Debug|x64
+		{5BB4D4FF-6A01-466D-A2AB-78EA80ABEE1C}.Release|x64.Build.0 = Debug|x64
+		{5BB4D4FF-6A01-466D-A2AB-78EA80ABEE1C}.Release|x86.ActiveCfg = Release|x64
+		{5BB4D4FF-6A01-466D-A2AB-78EA80ABEE1C}.Release|x86.Build.0 = Release|x64
+		{709528F8-5B3E-4857-A2B6-7CA4307AFEFE}.Debug|x64.ActiveCfg = Debug|x64
+		{709528F8-5B3E-4857-A2B6-7CA4307AFEFE}.Debug|x64.Build.0 = Debug|x64
+		{709528F8-5B3E-4857-A2B6-7CA4307AFEFE}.Debug|x86.ActiveCfg = Debug|x64
+		{709528F8-5B3E-4857-A2B6-7CA4307AFEFE}.Debug|x86.Build.0 = Debug|x64
+		{709528F8-5B3E-4857-A2B6-7CA4307AFEFE}.Release|x64.ActiveCfg = Debug|x64
+		{709528F8-5B3E-4857-A2B6-7CA4307AFEFE}.Release|x64.Build.0 = Debug|x64
+		{709528F8-5B3E-4857-A2B6-7CA4307AFEFE}.Release|x86.ActiveCfg = Release|x64
+		{709528F8-5B3E-4857-A2B6-7CA4307AFEFE}.Release|x86.Build.0 = Release|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9B5DBCA6-F70D-476F-BDC1-C5692114B9A8}
+	EndGlobalSection
+EndGlobal

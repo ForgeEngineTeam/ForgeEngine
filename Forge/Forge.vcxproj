@@ -1,0 +1,216 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>16.0</VCProjectVersion>
+    <Keyword>Win32Proj</Keyword>
+    <ProjectGuid>{5bb4d4ff-6a01-466d-a2ab-78ea80abee1c}</ProjectGuid>
+    <RootNamespace>Forge</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <OutDir>$(SolutionDir)Sandbox\Binaries\$(Configuration)-$(Platform)\</OutDir>
+    <IntDir>$(SolutionDir)$(ProjectName)\Intermediates\$(Configuration)-$(Platform)\</IntDir>
+    <TargetName>forge</TargetName>
+    <IncludePath>$(SolutionDir)Forge\Source\;$(SolutionDir)Forge\ThirdParty\;$(IncludePath)</IncludePath>
+    <LibraryPath>$(SolutionDir)Forge\Lib\;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <OutDir>$(SolutionDir)Sandbox\Binaries\$(Configuration)-$(Platform)\</OutDir>
+    <IntDir>$(SolutionDir)$(ProjectName)\Intermediates\$(Configuration)-$(Platform)\</IntDir>
+    <TargetName>forge</TargetName>
+    <IncludePath>$(SolutionDir)Forge\Source\;$(SolutionDir)Forge\ThirdParty\;$(IncludePath)</IncludePath>
+    <LibraryPath>$(SolutionDir)Forge\Lib\glew;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>TurnOffAllWarnings</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>FORGE_EXPORT;FORGE_BUILD_DEBUG;_CONSOLE</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <LanguageStandard_C>stdc17</LanguageStandard_C>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>TurnOffAllWarnings</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>FORGE_EXPORT;FORGE_RENDER_API_OPENGL;_CONSOLE</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <LanguageStandard_C>stdc17</LanguageStandard_C>
+      <UndefinePreprocessorDefinitions>
+      </UndefinePreprocessorDefinitions>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>glew32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="Source\Core\Public\Algorithm\Algorithm.h" />
+    <ClInclude Include="Source\Core\Public\Algorithm\BinraryFunctions.h" />
+    <ClInclude Include="Source\Core\Public\Algorithm\GeneralUtilities.h" />
+    <ClInclude Include="Source\Core\Public\Algorithm\Hash\AbstractHash.h" />
+    <ClInclude Include="Source\Core\Public\Algorithm\Hash\HashResult.h" />
+    <ClInclude Include="Source\Core\Public\Algorithm\RangeUtilities.h" />
+    <ClInclude Include="Source\Core\Public\Algorithm\StringUtilities.h" />
+    <ClInclude Include="Source\Core\Public\Algorithm\UnaryFunctions.h" />
+    <ClInclude Include="Source\Core\Public\Common\Common.h" />
+    <ClInclude Include="Source\Core\Public\Common\Compiler.h" />
+    <ClInclude Include="Source\Core\Public\Common\PreprocessorUtilities.h" />
+    <ClInclude Include="Source\Core\Public\Containers\Containers.h" />
+    <ClInclude Include="Source\Core\Public\Math\TRectangle.h" />
+    <ClInclude Include="Source\Core\Public\Math\TVector.h" />
+    <ClInclude Include="Source\Core\Public\Types\String\AbstractString.h" />
+    <ClInclude Include="Source\Core\Public\Types\String\String.h" />
+    <ClInclude Include="Source\Core\Public\Types\String\StringBuilder.h" />
+    <ClInclude Include="Source\Core\Public\Types\String\StringView.h" />
+    <ClInclude Include="Source\Core\Public\Types\TDelegate.h" />
+    <ClInclude Include="Source\Core\Public\Common\TypeDefinitions.h" />
+    <ClInclude Include="Source\Core\Public\Common\TypeTraits.h" />
+    <ClInclude Include="Source\Core\Public\Containers\AbstractCollection.h" />
+    <ClInclude Include="Source\Core\Public\Containers\AbstractList.h" />
+    <ClInclude Include="Source\Core\Public\Containers\TDynamicArray.h" />
+    <ClInclude Include="Source\Core\Public\Containers\TDynamicQueue.h" />
+    <ClInclude Include="Source\Core\Public\Containers\TDynamicStack.h" />
+    <ClInclude Include="Source\Core\Public\Containers\TLinkedList.h" />
+    <ClInclude Include="Source\Core\Public\Types\TMemoryRegion.h" />
+    <ClInclude Include="Source\Core\Public\Types\TPair.h" />
+    <ClInclude Include="Source\Core\Public\Containers\TStaticArray.h" />
+    <ClInclude Include="Source\Core\Public\Containers\TStaticQueue.h" />
+    <ClInclude Include="Source\Core\Public\Containers\TStaticStack.h" />
+    <ClInclude Include="Source\Core\Public\Types\TTuple.h" />
+    <ClInclude Include="Source\Core\Public\Debug\Debug.h" />
+    <ClInclude Include="Source\Core\Public\Debug\Exception\Exceptions\BadAllocationException.h" />
+    <ClInclude Include="Source\Core\Public\Debug\Exception\Exceptions\DivideByZeroException.h" />
+    <ClInclude Include="Source\Core\Public\Debug\Exception\Exception.h" />
+    <ClInclude Include="Source\Core\Public\Debug\Exception\ExceptionFactory.h" />
+    <ClInclude Include="Source\Core\Public\Debug\Exception\Exceptions\FileNotFoundException.h" />
+    <ClInclude Include="Source\Core\Public\Debug\Exception\Exceptions\IndexOutOfRangeException.h" />
+    <ClInclude Include="Source\Core\Public\Debug\Exception\Exceptions\InvalidOperationException.h" />
+    <ClInclude Include="Source\Core\Public\Debug\Exception\Exceptions\InvalidIOException.h" />
+    <ClInclude Include="Source\Core\Public\Debug\Exception\Exceptions\TimeoutException.h" />
+    <ClInclude Include="Source\Core\Public\CoreFwd.h" />
+    <ClInclude Include="Source\Core\Public\Memory\AbstractAllocator.h" />
+    <ClInclude Include="Source\Core\Public\Memory\CAllocator.h" />
+    <ClInclude Include="Source\Core\Public\Memory\FreeListAllocator.h" />
+    <ClInclude Include="Source\Core\Public\Memory\LinearAllocator.h" />
+    <ClInclude Include="Source\Core\Public\Memory\Memory.h" />
+    <ClInclude Include="Source\Core\Public\Memory\MemorySystem.h" />
+    <ClInclude Include="Source\Core\Public\Memory\MemoryUtilities.h" />
+    <ClInclude Include="Source\Core\Public\Memory\PoolAllocator.h" />
+    <ClInclude Include="Source\Core\Public\Memory\StackAllocator.h" />
+    <ClInclude Include="Source\Core\Public\RTTI\Object.h" />
+    <ClInclude Include="Source\Core\Public\RTTI\ObjectManager.h" />
+    <ClInclude Include="Source\Core\Public\Types\RefCounter.h" />
+    <ClInclude Include="Source\Core\Public\Types\SmartPointer.h" />
+    <ClInclude Include="Source\Core\Public\RTTI\TypeInfo.h" />
+    <ClInclude Include="Source\Core\Public\Types\TSingleton.h" />
+    <ClInclude Include="Source\Core\Public\Types\Types.h" />
+    <ClInclude Include="Source\GraphicsDevice\Public\Base\AbstractGraphicsContextState.h" />
+    <ClInclude Include="Source\GraphicsDevice\Public\Base\AbstractHardwareBuffer.h" />
+    <ClInclude Include="Source\GraphicsDevice\Public\Base\AbstractVertexDecleration.h" />
+    <ClInclude Include="Source\GraphicsDevice\Public\GraphicsObject.h" />
+    <ClInclude Include="Source\GraphicsDevice\Public\GraphicsTypes.h" />
+    <ClInclude Include="Source\GraphicsDevice\Public\OpenGL\GLLoader.h" />
+    <ClInclude Include="Source\GraphicsDevice\Public\OpenGL\GLGraphicsContextState.h" />
+    <ClInclude Include="Source\GraphicsDevice\Public\OpenGL\Win32\WGLGraphicsContext.h" />
+    <ClInclude Include="Source\GraphicsDevice\Public\OpenGL\GLHardwareIndexBuffer.h" />
+    <ClInclude Include="Source\GraphicsDevice\Public\OpenGL\GLHardwareVertexBuffer.h" />
+    <ClInclude Include="Source\GraphicsDevice\Public\OpenGL\GLUtilities.h" />
+    <ClInclude Include="Source\GraphicsDevice\Public\OpenGL\GLVertexDecleration.h" />
+    <ClInclude Include="Source\GraphicsDevice\Public\OpenGL\GL\gl.h" />
+    <ClInclude Include="Source\GraphicsDevice\Public\OpenGL\Win32\wgl.h" />
+    <ClInclude Include="Source\GraphicsDevice\Public\OpenGL\Win32\WGLLoader.h" />
+    <ClInclude Include="Source\GraphicsDevice\Public\VertexElement.h" />
+    <ClInclude Include="Source\Platform\Public\Base\AbstractDynamicLibrary.h" />
+    <ClInclude Include="Source\Platform\Public\Base\AbstractPlatform.h" />
+    <ClInclude Include="Source\Platform\Public\Base\AbstractWindow.h" />
+    <ClInclude Include="Source\Platform\Public\DynamicLibrary.h" />
+    <ClInclude Include="Source\Platform\Public\DynamicLibraryManager.h" />
+    <ClInclude Include="Source\Platform\Public\Platform.h" />
+    <ClInclude Include="Source\Platform\Public\Window.h" />
+    <ClInclude Include="Source\Platform\Public\WindowDesc.h" />
+    <ClInclude Include="Source\Platform\Public\Windows\WindowsDynamicLibrary.h" />
+    <ClInclude Include="Source\Platform\Public\Windows\WindowsWindow.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Source\Core\Private\Debug\Exception.cpp" />
+    <ClCompile Include="Source\Core\Private\Debug\ExceptionFactory.cpp" />
+    <ClCompile Include="Source\Core\Private\Memory\CAllocator.cpp" />
+    <ClCompile Include="Source\Core\Private\Memory\FreeListAllocator.cpp" />
+    <ClCompile Include="Source\Core\Private\Memory\LinearAllocator.cpp" />
+    <ClCompile Include="Source\Core\Private\Memory\PoolAllocator.cpp" />
+    <ClCompile Include="Source\Core\Private\Memory\StackAllocator.cpp" />
+    <ClCompile Include="Source\Core\Private\RTTI\Object.cpp" />
+    <ClCompile Include="Source\Core\Private\RTTI\TypeInfo.cpp" />
+    <ClCompile Include="Source\Core\Private\Types\String\String.cpp" />
+    <ClCompile Include="Source\Core\Public\Debug\Exception\Exceptions\MemoryOutOfBoundsException.h" />
+    <ClCompile Include="Source\GraphicsDevice\Private\Base\AbstractVertexDecleration.cpp" />
+    <ClCompile Include="Source\GraphicsDevice\Private\OpenGL\GLGraphicsContextState.cpp" />
+    <ClCompile Include="Source\GraphicsDevice\Private\OpenGL\Win32\WGLGraphicsContext.cpp" />
+    <ClCompile Include="Source\GraphicsDevice\Private\OpenGL\GLHardwareBuffer.cpp" />
+    <ClCompile Include="Source\GraphicsDevice\Private\OpenGL\Win32\WGLLoader.cpp" />
+    <ClCompile Include="Source\GraphicsDevice\Public\Base\AbstractGraphicsContext.h" />
+    <ClCompile Include="Source\GraphicsDevice\Public\OpenGL\GLHardwareBuffer.h" />
+    <ClCompile Include="Source\Platform\Private\Base\AbstractPlatform.cpp" />
+    <ClCompile Include="Source\Platform\Private\Base\AbstractWindow.cpp" />
+    <ClCompile Include="Source\Platform\Private\DynamicLibraryManager.cpp" />
+    <ClCompile Include="Source\Platform\Private\Windows\WindowsDynamicLibrary.cpp" />
+    <ClCompile Include="Source\Platform\Private\Windows\WindowsPlatform.cpp" />
+    <ClCompile Include="Source\Platform\Private\Windows\WindowsWindow.cpp" />
+    <ClCompile Include="Source\Platform\Public\Windows\WindowsPlatform.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
