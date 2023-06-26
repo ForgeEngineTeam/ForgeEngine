@@ -47,8 +47,8 @@
     <OutDir>$(SolutionDir)Sandbox\Binaries\$(Configuration)-$(Platform)\</OutDir>
     <IntDir>$(SolutionDir)$(ProjectName)\Intermediates\$(Configuration)-$(Platform)\</IntDir>
     <TargetName>forge</TargetName>
-    <IncludePath>$(SolutionDir)Forge\Source\;$(SolutionDir)Forge\ThirdParty\;$(IncludePath)</IncludePath>
-    <LibraryPath>$(SolutionDir)Forge\Lib\;$(LibraryPath)</LibraryPath>
+    <IncludePath>$(SolutionDir)$(ProjectName)\Source\;$(SolutionDir)$(ProjectName)\ThirdParty\;$(IncludePath)</IncludePath>
+    <LibraryPath>$(SolutionDir)$(ProjectName)\Lib\;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <OutDir>$(SolutionDir)Sandbox\Binaries\$(Configuration)-$(Platform)\</OutDir>
@@ -70,7 +70,6 @@
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">

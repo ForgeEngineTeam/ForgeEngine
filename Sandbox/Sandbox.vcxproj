@@ -47,7 +47,7 @@
     <OutDir>$(SolutionDir)$(ProjectName)\Binaries\$(Configuration)-$(Platform)\</OutDir>
     <IntDir>$(SolutionDir)$(ProjectName)\Intermediates\$(Configuration)-$(Platform)\</IntDir>
     <IncludePath>$(SolutionDir)Forge\Source\;$(SolutionDir)Forge\ThirdParty\</IncludePath>
-    <LibraryPath>$(SolutionDir)Forge\Lib\glew;$(LibraryPath)</LibraryPath>
+    <LibraryPath>$(SolutionDir)Forge\Lib;$(LibraryPath)</LibraryPath>
     <ExtensionsToDeleteOnClean>$(ExtensionsToDeleteOnClean)</ExtensionsToDeleteOnClean>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
